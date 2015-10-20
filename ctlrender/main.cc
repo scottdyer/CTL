@@ -648,7 +648,7 @@ int main(int argc, const char **argv)
 			}
 			if (access(outputFile, F_OK) >= 0)
 			{
-				fprintf(stderr, "Can not overwrite the file '%s'.\n", outputFile);
+				fprintf(stderr, "Output file '%s' already exists. Refusing to overwrite.\n", outputFile);
 				exit(1);
 			}
 			actual_format.squish = noalpha;
