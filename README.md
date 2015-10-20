@@ -66,10 +66,15 @@ below.
 
         $ yum install cmake
 
-* OS X (Install homebrew if not already installed)
+* OS X
+    
+    * Install homebrew if not already installed
 
-        $ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-        $ brew install cmake
+            $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+            
+    * Install cmake
+            
+            $ brew install cmake
 
 __IlmBase__
 
@@ -84,10 +89,15 @@ downloaded from http://www.openexr.com or use one of the commands below.
 
         $ yum install ilmbase-devel
 
-* OS X (Install homebrew if not already installed)
+* OS X
 
-        $ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-        $ brew install ilmBase
+    * Install homebrew if not already installed
+
+            $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+            
+    * Install ilmBase
+    
+            $ brew install ilmBase
 
 
 ### Suggested ###
@@ -108,10 +118,37 @@ commands below.
 
         $ yum install OpenEXR-devel
 
-* OS X (Install homebrew if not already installed)
+* OS X
 
-        $ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-        $ brew install openexr
+    * Install homebrew if not already installed
+
+            $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+            
+    * Install OpenEXR
+    
+            $ brew install openexr                        
+
+__TIFF__
+
+If you want to use CTL together with the TIFF image file format, you should download libTiff. libTiff can be downloaded from http://www.remotesensing.org/libtiff/ or using one of the commands below.
+
+* Ubuntu
+
+        $ sudo apt-get install libtiff4
+
+* Redhat
+
+        $ yum install libtiff4
+
+* OS X
+
+    * Install homebrew if not already installed
+
+            $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+            
+    * Install TIFF
+    
+            $ brew install libtiff                        
 
 __ACES Container__
 
@@ -119,18 +156,43 @@ ctlrender is able to write files compliant with SMPTE S2065-4. This
 functionality requires the aces_container library, the latest version of which 
 can be downloaded from https://github.com/ampas/aces_container
 
+* OS X
+
+    * Install homebrew if not already installed
+
+            $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+            
+    * Install ACES Container
+    
+            $ brew install aces_container
+
 ## Installation ##
 
-from the root source directory:
+* OS X
 
-    $ mkdir build && cd build
-    $ cmake ..
-    $ make
-    $ sudo make install
+    * Install homebrew if not already installed
 
-to run the optional unit tests:
+            $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+            
+    * Install CTL
+    
+        Homebrew will install all dependancies (cmake, ilmbase, opener, aces_container, libtiff) automatically by default.  No need to install each manually.
+    
+            $ brew install ctl
 
-    $ sudo make check
+
+* Redhat, Ubuntu
+
+    from the root source directory:
+
+        $ mkdir build && cd build
+        $ cmake ..
+        $ make
+        $ sudo make install
+
+    to run the optional unit tests:
+
+        $ sudo make check
 
 ## License ##
  
