@@ -249,8 +249,9 @@ void exr_write(const char *name, float scale, const ctl::dpx::fb<float> &pixels,
         exr_write16(name, scale, pixels, compression);
     }
     else {
-        THROW(Iex::ArgExc, "EXR files only support 16 or 32 bps at the moment.");
-    }
+        THROW(Iex::ArgExc, "EXR files only support 16 or 32 bits per sample; the implicitly requested \nbits per sample is unsupported.  Use -format exr16 or -format exr32 to explicitly request 16-bit \nor 32-bit floating-point EXR output.\n"
+        );
+    } 
 }
 
 #else
